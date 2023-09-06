@@ -6,17 +6,11 @@ class TestGame < Minitest::Test
   Match = WordshapeCli::Match
   NoMatch = WordshapeCli::NoMatch
 
-  # def test_matches_initialized
-  #   game = WordshapeCli::Game.new("trail")
-  #   expected = [
-  #     NoMatch.new(char: "t"),
-  #     NoMatch.new(char: "r"),
-  #     NoMatch.new(char: "a"),
-  #     NoMatch.new(char: "i"),
-  #     NoMatch.new(char: "l")
-  #   ]
-  #   assert_equal(expected, game.solution_matches)
-  # end
+  def test_solution_chars_initialized
+    game = WordshapeCli::Game.new("trail")
+    expected = %w[t r a i l]
+    assert_equal(expected, game.solution_chars)
+  end
 
   def test_position_match
     game = WordshapeCli::Game.new("trail")

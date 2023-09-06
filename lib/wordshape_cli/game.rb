@@ -2,15 +2,14 @@
 
 module WordshapeCli
   class Game
-    attr_reader :solution_chars, :guess_chars, :guess_matches
+    attr_reader :solution_chars, :guess_matches
 
     def initialize(solution_word)
       @solution_chars = solution_word.chars
     end
 
     def guess(guess_word)
-      @guess_chars = guess_word.chars
-      @guess_matches = init_matches(guess_chars)
+      @guess_matches = init_matches(guess_word.chars)
 
       guess_matches.each_with_index do |guess_match, i|
         guess_char = guess_match.char
