@@ -8,11 +8,6 @@ module WordshapeCli
 
   # Valid values
   # - char: any lowercase letter a-z
-  # - type: :position, :letter, nil
-  # Match = Struct.new(:char, :type, keyword_init: true)
-
-  # Valid values
-  # - char: any lowercase letter a-z
   # - type: :position, :letter
   Match = Data.define(:char, :type) do
     def nil?
